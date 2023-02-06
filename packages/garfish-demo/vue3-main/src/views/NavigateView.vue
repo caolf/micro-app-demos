@@ -13,6 +13,9 @@
     <router-link to="/viteApp/communication-test">
       <a-button type="primary">跳转至Vite子应用</a-button>
     </router-link>
+    <router-link to="/appCenter/app-center-web">
+      <a-button type="primary">跳转至app center子应用</a-button>
+    </router-link>
   </a-space>
 </template>
 

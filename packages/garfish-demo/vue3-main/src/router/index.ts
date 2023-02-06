@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import { useMenuStore } from '@/stores/menu'
 import { useUserStore } from '@/stores/user'
 import { user as userData } from '@/data/userData'
@@ -10,7 +10,7 @@ import { toRaw } from 'vue'
 const map = new Map()
 
 const router = createRouter({
-  history: createWebHashHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
@@ -65,13 +65,14 @@ router.afterEach(async (to, from) => {
         basename: toAppInfo.activeWhen,
         entry: toAppInfo.entry,
         props: {
-          path
+          path,
         },
-        cache: true
+        cache: true,
       }
-      if (toAppInfo.name === 'viteApp') {
+      if (toAppInfo.name === 'viteApp' || toAppInfo.name === 'appCenter') {
         options.sandbox = false
       }
+      debugger
       const app = await Garfish.loadApp(toAppInfo.name, options)
       await app?.mount()
       map.set(toAppInfo.name, app)

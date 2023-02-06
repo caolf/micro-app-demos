@@ -7,6 +7,11 @@
     <a-divider class="title">
       <h2>Vue2子应用向主应用通信</h2>
     </a-divider>
+    <div>
+      <router-link to="/tab-view">
+        <button type="primary">table view</button>
+      </router-link>
+    </div>
     <message-trigger />
     <a-divider class="title">
       <h2>Vue2子应用Counter</h2>

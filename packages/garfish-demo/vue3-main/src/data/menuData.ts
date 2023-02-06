@@ -37,7 +37,7 @@ export const menuList: Menu[] = [
     children: [
       {
         key: 21,
-        path: 'communication-test',
+        path: '*',
         name: 'Vue2通信测试'
       },
       {
@@ -78,13 +78,8 @@ export const menuList: Menu[] = [
     children: [
       {
         key: 41,
-        path: 'communication-test',
+        path: '*',
         name: 'Vite通信测试'
-      },
-      {
-        key: 42,
-        path: 'navigate-view',
-        name: '子应用跳转测试'
       }
     ]
   },

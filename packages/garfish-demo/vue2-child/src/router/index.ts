@@ -22,7 +22,12 @@ const routes: Array<RouteConfig> = [
         component: () => lazyLoad(import('@/views/CoexistView.vue')),
       },
       {
-        path: 'tab-view',
+        path: '/vue2App/tab-view',
+        name: 'TabView',
+        component: () => lazyLoad(import('@/views/TabView.vue')),
+      },
+      {
+        path: '/tab-view',
         name: 'TabView',
         component: () => lazyLoad(import('@/views/TabView.vue')),
       },
@@ -48,6 +53,8 @@ export function baseRouter(base: string, mode: RouterMode = 'hash') {
   })
 }
 
+console.log('vue2-child, base-url', process.env.BASE_URL)
+console.log('vue2-child, process env ', JSON.stringify(process.env))
 const router = baseRouter(process.env.BASE_URL as string)
 
 export default router
